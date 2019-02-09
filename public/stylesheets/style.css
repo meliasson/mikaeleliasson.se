@@ -4,14 +4,15 @@
 }
 
 body {
-  font-family: "Courier New", monospace;
+  color: #333;
+  font-family: 'Space Mono', monospace;
   font-size: 44px;
   text-transform: lowercase;
 }
 
 a {
-  color: black;
   background: yellow;
+  color: #333;
   text-decoration: none;
 }
 
@@ -27,22 +28,26 @@ ul {
   margin-top: 44px;
 }
 
-.heading a {
-  /* background: none; */
-}
-
 .inner {
   margin-left: -10.34%;
   margin-right: -19.44%;
 }
 
 .outer {
-  background: lightpink;
+  border: 1px solid #333;
   margin: 44px 15% 44px 8%;
+  padding: 22px 0 44px 0;
+  animation: pulse 10s infinite;
 }
 
 .social-nav {
   float: right;
+}
+
+@keyframes pulse {
+  0% {background-color: white;}
+  50% {background-color: deeppink;}
+  100% {background-color: white;}
 }
 
 @media only screen and (max-width: 600px) {
@@ -65,5 +70,6 @@ ul {
   .outer {
     margin-top: 22px;
     margin-bottom: 22px;
+    padding: 11px 0 22px 0;
   }
 }
