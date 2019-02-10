@@ -4,15 +4,20 @@
     <title><%= title %></title>
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link href='/stylesheets/style.css' rel='stylesheet' />
+    <script src="/javascripts/marquee3k.min.js"></script>
+    <script src="/javascripts/index.js"></script>
   </head>
   <body>
     <div class="outer">
       <div class="inner">
         <div class="heading"><a href="#" onmousedown="new Audio('/sounds/hello.mp3').play()">Hello</a><div class="social-nav"><a href="https://github.com/meliasson">GH</a> <a href="https://www.linkedin.com/in/meliasson/">LI</a> <a href="https://stackoverflow.com/users/2479741/meliasson">SO</a></div></div>
-        <p>Mikael Eliasson developes software at <a href="https://www.mittmedia.se/">MittMedia</a>. He has a M.Sc. in computer science from <a href="https://www.kth.se/">KTH</a>, and has previously worked at for example <a href="https://www.ericsson.com/en">Ericsson</a> and <a href="https://www.sogeti.se/">Sogeti</a>.</p>
+        <p>Mikael Eliasson developes software at <a id="mittmedia" class="info">MittMedia</a>.<span id="mittmedia-marquee" class="hidden marquee"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur convallis augue, in lobortis nisi porta varius.</span></span> He has a M.Sc. in computer science from <a id="kth" class="info">KTH</a>,<span id="kth-marquee" class="hidden marquee"><span>Lorizzle ipsum dolor sizzle sizzle, shizznit adipiscing elit. Hizzle pot velizzle, ghetto volutpat, suscipit quizzle</span></span> and has previously worked at for example <a id="ericsson" class="info">Ericsson</a><span id="ericsson-marquee" class="hidden marquee"><span>Lorem ipsum dolor retro quinoa coloring book jean shorts normcore, dreamcatcher humblebrag pug sartorial air plant.</span></span> and <a id="sogeti" class="info">Sogeti</a>.<span id="sogeti-marquee" class="hidden marquee"><span>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do.</span></span></p>
         <p>Occasionally, programming that isn't work related happens. Examples of current pet projects are <a href="#">GDAX</a>, <a href="#">Multiplayer</a> and <a href="#">RaspberryPi</a>.</p>
         <p>Even more occasionally books are read. Some that haven't been read are <a href="#">LoL</a>, <a href="#">SICP</a> and <a href="#">GEB</a>.</p>
       </div>
     </div>
+    <script>
+      init();
+    </script>
   </body>
 </html>

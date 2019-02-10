@@ -4,7 +4,7 @@
 }
 
 body {
-  color: #333;
+  color: #444;
   font-family: 'Space Mono', monospace;
   font-size: 44px;
   text-transform: lowercase;
@@ -12,36 +12,32 @@ body {
 
 a {
   background: yellow;
-  color: #333;
+  color: #444;
   text-decoration: none;
-}
-
-li {
-  margin-top: 22px;
 }
 
 p {
   margin-top: 44px;
 }
 
-ul {
-  margin-top: 44px;
-}
-
-.inner {
-  margin-left: -10.34%;
-  margin-right: -19.44%;
-}
-
-.outer {
-  border: 1px solid #333;
-  margin: 44px 15% 44px 8%;
-  padding: 22px 0 44px 0;
-  /* animation: pulse 10s infinite; */
-}
-
 .social-nav {
   float: right;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.marquee {
+  color: #9900ff;
+  display: block;
+  margin: 20px 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.pulse {
+  animation: pulse 10s infinite;
 }
 
 @keyframes pulse {
@@ -55,21 +51,7 @@ ul {
     font-size: 22px;
   }
 
-  li {
-    margin-top: 11px;
-  }
-
   p {
     margin-top: 22px;
-  }
-
-  ul {
-    margin-top: 22px;
-  }
-
-  .outer {
-    margin-top: 22px;
-    margin-bottom: 22px;
-    padding: 11px 0 22px 0;
   }
 }
