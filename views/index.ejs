@@ -4,20 +4,18 @@
     <title><%= title %></title>
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link href='/stylesheets/style.css' rel='stylesheet' />
-    <script src="/javascripts/marquee3k.min.js"></script>
+    <script src="/javascripts/marquee.js"></script>
     <script src="/javascripts/index.js"></script>
   </head>
   <body>
-    <div class="outer">
-      <div class="inner">
-        <div class="heading"><a href="#" onmousedown="new Audio('/sounds/hello.mp3').play()">Hello</a><div class="social-nav"><a href="https://github.com/meliasson">GH</a> <a href="https://www.linkedin.com/in/meliasson/">LI</a> <a href="https://stackoverflow.com/users/2479741/meliasson">SO</a></div></div>
-        <p>Mikael Eliasson developes software at <a id="mittmedia" class="info">MittMedia</a>.<span id="mittmedia-marquee" class="hidden marquee"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur convallis augue, in lobortis nisi porta varius.</span></span> He has a M.Sc. in computer science from <a id="kth" class="info">KTH</a>,<span id="kth-marquee" class="hidden marquee"><span>Lorizzle ipsum dolor sizzle sizzle, shizznit adipiscing elit. Hizzle pot velizzle, ghetto volutpat, suscipit quizzle</span></span> and has previously worked at for example <a id="ericsson" class="info">Ericsson</a><span id="ericsson-marquee" class="hidden marquee"><span>Lorem ipsum dolor retro quinoa coloring book jean shorts normcore, dreamcatcher humblebrag pug sartorial air plant.</span></span> and <a id="sogeti" class="info">Sogeti</a>.<span id="sogeti-marquee" class="hidden marquee"><span>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do.</span></span></p>
-        <p>Occasionally, programming that isn't work related happens. Examples of current pet projects are <a href="#">GDAX</a>, <a href="#">Multiplayer</a> and <a href="#">RaspberryPi</a>.</p>
-        <p>Even more occasionally books are read. Some that haven't been read are <a href="#">LoL</a>, <a href="#">SICP</a> and <a href="#">GEB</a>.</p>
-      </div>
-    </div>
+    <div class="heading"><a href="#" onmousedown="new Audio('/sounds/hello.mp3').play()">Hello</a><div class="social-nav"><a href="https://github.com/meliasson">GH</a> <a href="https://www.linkedin.com/in/meliasson/">LI</a> <a href="https://stackoverflow.com/users/2479741/meliasson">SO</a></div></div>
+    <p>Mikael Eliasson developes software at <span id="mittmedia" class="info">MittMedia</span>.<span id="mittmedia-marquee" class="hidden marquee">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur convallis augue, in lobortis nisi porta varius.</span> He has a M.Sc. in computer science from <span id="kth" class="info">KTH</span>,<span id="kth-marquee" class="hidden marquee">Lorizzle ipsum dolor sizzle sizzle, shizznit adipiscing elit. Hizzle pot velizzle, ghetto volutpat, suscipit quizzle</span> and has previously worked at for example <span id="ericsson" class="info">Ericsson</span><span id="ericsson-marquee" class="hidden marquee">Lorem ipsum dolor retro quinoa coloring book jean shorts normcore, dreamcatcher humblebrag pug sartorial air plant.</span> and <span id="sogeti" class="info">Sogeti</span>.<span id="sogeti-marquee" class="hidden marquee">Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do.</span></p>
+    <p>Occasionally, programming that isn't work related happens. Examples of current pet projects are <a href="#">GDAX</a>, <a href="#">Multiplayer</a> and <a href="#">RaspberryPi</a>.</p>
+    <p>Even more occasionally books are read. Some that haven't been read&mdash;but hopefully will be&mdash;are <a href="#">Land of Lisp</a>, <a href="#">SICP</a>, and <a href="#">GEB</a>.</p>
+    <p>Finally, all flaws in design and implementation exist probably because <span id="worse-is-better" class="info">worse is better</span><span id="worse-is-better-marquee" class="hidden marquee"><span>Zzzz zzzzz zzz zzzzzz zz zzzzz z zzzz zzz ...</span></span> and the author wishes he was a <a href="#">duct tape programmer</a>.</p>
+    <div class="canvas"><canvas id="game-of-life"></canvas></div>
     <script>
-      init();
+      me.init();
     </script>
   </body>
 </html>

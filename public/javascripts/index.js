@@ -1,43 +1,17 @@
-function init() {
-  var infoElements = document.getElementsByClassName('info');
-  for (var i = 0; i < infoElements.length; i++) {
-    infoElements[i].addEventListener("click", function(event){
-      var infoElement = event.target;
-      var marqueeElementId = infoElement.id + '-marquee'
-      var marqueeElement = document.getElementById(marqueeElementId);
-      marqueeElement.classList.toggle('hidden');
-      rightJS.toggle(marqueeElementId);
+var me = me || {}
+
+me.init = function () {
+   var marqueeButtons = document.getElementsByClassName('info');
+  for (var i = 0; i < marqueeButtons.length; i++) {
+    marqueeButtons[i].addEventListener('click', function(event) {
+      var marquee = document.getElementById(`${event.target.id}-marquee`);
+      if (marquee.classList.contains('hidden')) {
+        marquee.classList.remove('hidden');
+        me.marquee.start(marquee);
+      } else {
+        me.marquee.stop(marquee);
+        marquee.classList.add('hidden');
+      }
     });
   }
 }
-
-var rightJS = {
-  marquees: {},
-  toggle: function(elementId) {
-    if (rightJS.marquees[elementId]) {
-      window.cancelAnimationFrame(rightJS.marquees[elementId]);
-      delete rightJS.marquees[elementId];
-    } else {
-      rightJS.init(elementId);
-    }
-  },
-  init: function(elementId) {
-    var outerElement = document.getElementById(elementId);
-    outerElement.style.overflow = 'hidden';
-    outerElement.style.whiteSpace = 'nowrap';
-    var innerElement = outerElement.querySelector('span');
-    innerElement.style.position = 'relative';
-    innerElement.style.right = '-' + outerElement.offsetWidth + 'px';
-    rightJS.loop(innerElement);
-  },
-  loop: function(innerElement){
-    var x = parseFloat(innerElement.style.right);
-    x = x + 3;
-    var W = innerElement.parentElement.offsetWidth;
-    var w = innerElement.offsetWidth;
-    if (x > w) x = -W;
-    innerElement.style.right = x + 'px';
-    var id = requestAnimationFrame(this.loop.bind(this, innerElement));
-    rightJS.marquees[innerElement.parentElement.id] = id;
-  }
-};
