@@ -106,7 +106,7 @@ model.update = function () {
 model._getNeighborCount = function (row, column, matrix) {
   var maxRowIndex = matrix.length - 1
   var maxColumnIndex = matrix[0].length - 1
-  var neighbors = [];
+  var neighbors = []
 
   // upper-left neighbor
   if (row > 0 && column > 0) {
@@ -148,7 +148,7 @@ model._getNeighborCount = function (row, column, matrix) {
     neighbors.push(matrix[row][column - 1])
   }
 
-  var neighborCount = 0;
+  var neighborCount = 0
   for (var i = 0; i < neighbors.length; i++) {
     neighborCount += neighbors[i]
   }
