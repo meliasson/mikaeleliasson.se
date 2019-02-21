@@ -4,3 +4,8 @@
 # mikaeleliasson.se
 
 Well, since I pay for the domain, I might as well put a web site there.
+
+## TODO
+
+* Responsive layout for below 480px to above 1024px.
+* Bundle JS and CSS with Webpack.
