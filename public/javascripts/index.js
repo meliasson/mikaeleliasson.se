@@ -1,4 +1,5 @@
 import { start as startMarquee, stop as stopMarquee } from './marquee.js'
+import { start as startGameOfLife } from './gameoflife.js'
 
 function init () {
   var marqueeButtons = document.getElementsByClassName('info')
@@ -18,4 +19,5 @@ function init () {
 
 document.addEventListener('DOMContentLoaded', function () {
   init()
+  startGameOfLife()
 })
