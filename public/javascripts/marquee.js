@@ -1,6 +1,8 @@
 export function start (element) {
-  element.addEventListener('mouseenter', mouseEnterHandler)
-  element.addEventListener('mouseleave', mouseLeaveHandler)
+  element.addEventListener('mouseenter', pauseEventHandler)
+  element.addEventListener('touchstart', pauseEventHandler)
+  element.addEventListener('mouseleave', resumeEventHandler)
+  element.addEventListener('touchend', resumeEventHandler)
   var innerElement = document.createElement('span')
   innerElement.innerHTML = element.innerHTML
   innerElement.style.position = 'relative'
@@ -13,8 +15,10 @@ export function start (element) {
 }
 
 export function stop (element) {
-  element.removeEventListener('mouseenter', mouseEnterHandler)
-  element.removeEventListener('mouseleave', mouseLeaveHandler)
+  element.removeEventListener('mouseenter', pauseEventHandler)
+  element.removeEventListener('touchstart', pauseEventHandler)
+  element.removeEventListener('mouseleave', resumeEventHandler)
+  element.removeEventListener('touchend', resumeEventHandler)
   var innerElement = element.querySelector('span')
   element.innerHTML = innerElement.innerHTML
   element.removeAttribute('style')
@@ -35,12 +39,16 @@ function scroll (element) {
   animationFrameRequestIds[element.id] = id
 }
 
-function mouseEnterHandler (event) {
-  window.cancelAnimationFrame(animationFrameRequestIds[event.target.id])
+function pauseEventHandler (event) {
+  event.preventDefault()
+  var element = event.currentTarget
+  window.cancelAnimationFrame(animationFrameRequestIds[element.id])
 }
 
-function mouseLeaveHandler (event) {
-  window.requestAnimationFrame(scroll.bind(this, event.target))
+function resumeEventHandler (event) {
+  event.preventDefault()
+  var element = event.currentTarget
+  window.requestAnimationFrame(scroll.bind(this, element))
 }
 
 var animationFrameRequestIds = {}

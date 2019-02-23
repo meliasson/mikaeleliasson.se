@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
     <link href='/stylesheets/style.css' rel='stylesheet' />
-    <script defer src="/javascripts/index.js" type="module"></script>
+    <script src="/javascripts/index.js" type="module"></script>
   </head>
   <body>
-    <div class="heading"><a href="#" onmousedown="new Audio('/sounds/hello.mp3').play()">Hello</a><div class="social-nav"><a href="https://github.com/meliasson">GH</a> <a href="https://www.linkedin.com/in/meliasson/">LI</a> <a href="https://stackoverflow.com/users/2479741/meliasson">SO</a></div></div>
-    <p>Mikael Eliasson developes software at <span id="mittmedia" class="info">MittMedia</span>.<span id="mittmedia-marquee" class="hidden marquee">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur convallis augue, in lobortis nisi porta varius.</span> He has a M.Sc. in computer science from <span id="kth" class="info">KTH</span>,<span id="kth-marquee" class="hidden marquee">Lorizzle ipsum dolor sizzle sizzle, shizznit adipiscing elit. Hizzle pot velizzle, ghetto volutpat, suscipit quizzle</span> and has previously worked at for example <span id="ericsson" class="info">Ericsson</span><span id="ericsson-marquee" class="hidden marquee">Lorem ipsum dolor retro quinoa coloring book jean shorts normcore, dreamcatcher humblebrag pug sartorial air plant.</span> and <span id="sogeti" class="info">Sogeti</span>.<span id="sogeti-marquee" class="hidden marquee">Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do.</span></p>
-    <p>Occasionally, programming that isn't work related happens. Examples of current pet projects are <a href="#">GDAX</a>, <a href="#">Multiplayer</a> and <a href="#">RaspberryPi</a>.</p>
-    <p>Even more occasionally books are read. Some that haven't been read&mdash;but hopefully will be&mdash;are <a href="#">LoL</a>, <a href="#">SICP</a>, and <a href="#">GEB</a>.</p>
-    <p>Finally, all flaws in design and implementation of this website exist probably because <span id="worse-is-better" class="info">worse is better</span><span id="worse-is-better-marquee" class="hidden marquee"><span>Zzzz zzzzz zzz zzzzzz zz zzzzz z zzzz zzz ...</span></span> and the author believes he is a <a href="#">duct tape programmer</a>.</p>
-    <div class="canvas"><canvas id="game-of-life"></canvas></div>
+    <div class="heading"><div class="social-nav"><a href="https://github.com/meliasson">GitHub</a> <a href="#">CV</a></div></div>
+    <p>Mikael Eliasson developes software at <button id="mittmedia">MittMedia</button>.<span id="mittmedia-marquee" class="hidden wide marquee">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur convallis augue, in lobortis nisi porta varius.</span> He has an M.Sc. in computer science from <button id="kth" class="info">KTH</button>,<span id="kth-marquee" class="hidden wide marquee">Lorizzle ipsum dolor sizzle sizzle, shizznit adipiscing elit. Hizzle pot velizzle, ghetto volutpat, suscipit quizzle</span> and has previously worked at for example <button id="ericsson">Ericsson</button><span id="ericsson-marquee" class="hidden wide marquee">Lorem quinoa coloring book jean shorts normcore, dreamcatcher humblebrag pug sartorial air plant.</span> and <button id="sogeti">Sogeti</button>.<span id="sogeti-marquee" class="hidden wide marquee">Gaff chase pink topsail grog ballast fire ship booty Davy Jones' Locker haul wind. Barkadeer doubloon clipper gun knave Pieces of Eight.</span></p>
+    <p>Occasionally, programming that isn't work related happens. Examples of current pet projects are <a href="#">GDAX</a>, <a href="https://github.com/meliasson/multiplayer">Multiplayer</a> and <a href="#">RaspberryPi</a>.</p>
+    <p>Even more occasionally books are read. Some that haven't been read, but hopefully will be, are <a href="http://landoflisp.com/">LoL</a>, <a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">SICP</a>, and <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">GEB</a>.</p>
+    <p>Finally, all flaws&mdash;if any&mdash;in design and implementation of this website, exist because the author understands that <a href="https://en.wikipedia.org/wiki/Worse_is_better">worse is better</a>.</p>
+    <div class="wide canvas"><canvas id="game-of-life"></canvas></div>
   </body>
 </html>
