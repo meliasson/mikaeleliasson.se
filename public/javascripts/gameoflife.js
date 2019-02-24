@@ -33,18 +33,12 @@ view.init = function () {
 view.update = function (grid) {
   for (var row = 0; row < grid.length; row++) {
     for (var col = 0; col < grid[row].length; col++) {
+      var x = col * this._cellSize
+      var y = row * this._cellSize
       if (!grid[row][col]) {
-        this._context.clearRect(
-          col * this._cellSize,
-          row * this._cellSize,
-          this._cellSize,
-          this._cellSize)
+        this._context.clearRect(x, y, this._cellSize, this._cellSize)
       } else {
-        this._context.fillRect(
-          col * this._cellSize,
-          row * this._cellSize,
-          this._cellSize,
-          this._cellSize)
+        this._context.fillRect(x, y, this._cellSize, this._cellSize)
       }
     }
   }
@@ -62,38 +56,29 @@ view._compute_canvas_size = function () {
 var model = {}
 
 model.init = function () {
-  this.population = []
-  for (var row = 0; row < 30; row++) {
-    this.population.push([])
-    for (var col = 0; col < 30; col++) {
-      if (Math.floor(Math.random() * 5) < 4) {
-        this.population[row].push(0)
-      } else {
-        this.population[row].push(1)
+  this.population = this._buildEmptyMatrix()
+  for (var i = 0; i < this.population.length; i++) {
+    for (var j = 0; j < this.population[0].length; j++) {
+      if (Math.random() < 0.2) {
+        this.population[i][j] = 1
       }
     }
   }
 }
 
 model.update = function () {
-  var nextGeneration = []
+  var nextGeneration = this._buildEmptyMatrix()
 
-  for (var row = 0; row < this.population.length; row++) {
-    nextGeneration.push([])
-    for (var col = 0; col < this.population[row].length; col++) {
-      var neighbors = this._getNeighborCount(row, col, this.population)
-
-      if (this.population[row][col]) {
-        if (neighbors < 2 || neighbors > 3) {
-          nextGeneration[row].push(0)
-        } else if (neighbors === 2 || neighbors === 3) {
-          nextGeneration[row].push(1)
+  for (var i = 0; i < this.population.length; i++) {
+    for (var j = 0; j < this.population[i].length; j++) {
+      var neighbors = this._countNrOfAliveNeighbors(i, j, this.population)
+      if (this.population[i][j]) {
+        if (neighbors === 2 || neighbors === 3) {
+          nextGeneration[i][j] = 1
         }
       } else {
         if (neighbors === 3) {
-          nextGeneration[row].push(1)
-        } else {
-          nextGeneration[row].push(0)
+          nextGeneration[i][j] = 1
         }
       }
     }
@@ -103,55 +88,39 @@ model.update = function () {
   return this.population
 }
 
-model._getNeighborCount = function (row, column, matrix) {
-  var maxRowIndex = matrix.length - 1
-  var maxColumnIndex = matrix[0].length - 1
-  var neighbors = []
+model._countNrOfAliveNeighbors = function (x, y, matrix) {
+  var result = 0
+  var boundaries = this._calculateNeighborSubmatrixBoundaries(x, y, matrix)
 
-  // upper-left neighbor
-  if (row > 0 && column > 0) {
-    neighbors.push(matrix[row - 1][column - 1])
+  for (var i = boundaries.xStart; i <= boundaries.xStop; i++) {
+    for (var j = boundaries.yStart; j <= boundaries.yStop; j++) {
+      if (i !== x || j !== y) {
+        result += matrix[i][j]
+      }
+    }
   }
 
-  // upper-middle neighbor
-  if (row > 0) {
-    neighbors.push(matrix[row - 1][column])
+  return result
+}
+
+model._calculateNeighborSubmatrixBoundaries = function (i, j, matrix) {
+  return {
+    xStart: Math.max(0, i - 1),
+    xStop: Math.min(i + 1, matrix.length - 1),
+    yStart: Math.max(0, j - 1),
+    yStop: Math.min(j + 1, matrix[0].length - 1)
+  }
+}
+
+model._buildEmptyMatrix = function () {
+  var result = []
+
+  for (var i = 0; i < 30; i++) {
+    result.push([])
+    for (var j = 0; j < 30; j++) {
+      result[i].push(0)
+    }
   }
 
-  // upper-right neighbor
-  if (row > 0 && column < maxColumnIndex) {
-    neighbors.push(matrix[row - 1][column + 1])
-  }
-
-  // right neighbor
-  if (column < maxColumnIndex) {
-    neighbors.push(matrix[row][column + 1])
-  }
-
-  // lower-right neighbor
-  if (row < maxRowIndex && column < maxColumnIndex) {
-    neighbors.push(matrix[row + 1][column + 1])
-  }
-
-  // lower neighbor
-  if (row < maxRowIndex) {
-    neighbors.push(matrix[row + 1][column])
-  }
-
-  // lower-left neighbor
-  if (row < maxRowIndex && column > 0) {
-    neighbors.push(matrix[row + 1][column - 1])
-  }
-
-  // left neighbor
-  if (column > 0) {
-    neighbors.push(matrix[row][column - 1])
-  }
-
-  var neighborCount = 0
-  for (var i = 0; i < neighbors.length; i++) {
-    neighborCount += neighbors[i]
-  }
-
-  return neighborCount
+  return result
 }
