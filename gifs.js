@@ -31,7 +31,8 @@ function optionsForRelevant () {
 function getGif (options) {
   return request(options)
     .then(function (responseBody) {
-      return responseBody.results[Math.floor(Math.random() * 10)].media[0].gif.url
+      const index = Math.floor(Math.random() * responseBody.results.length)
+      return responseBody.results[index].media[0].gif.url
     })
     .catch(function () {
       return null
