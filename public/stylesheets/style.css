@@ -3,16 +3,20 @@
   padding: 0;
 }
 
+html.active {
+  color: #00FF00;
+}
+
 body {
   font-family: Helvetica Neue, sans-serif;
   font-size: 36px;
-  line-height: 52px;
+  line-height: 1.4;
   margin: 10px;
 }
 
 button {
   background: none;
-  border: 2px solid black;
+  border: 2px solid #000;
   font-family: Courier New, monospace;
   font-size: inherit;
   padding-left: 8px;
@@ -20,12 +24,29 @@ button {
   text-transform: lowercase;
 }
 
-p {
-  margin-top: 36px;
+button#hello {
+  background: #bfbfbf;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #dfdfdf;
+  border-top: 3px solid #dfdfdf;
 }
 
-.heading {
-  overflow: hidden;
+html.active button {
+  border-color: #00FF00;
+  color: #00FF00;
+}
+
+a {
+  color: #000;
+}
+
+html.active a {
+  color: #00FF00;
+}
+
+p {
+  margin-top: 36px;
 }
 
 .social-nav {
@@ -38,7 +59,7 @@ p {
   color: aqua;
   display: block;
   font-family: serif;
-  font-size: 42px;
+  font-size: 50px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -53,7 +74,7 @@ p {
 }
 
 .canvas {
-  /* display: none; */
+  display: none;
   margin-top: 20px;
   padding-bottom: 100%;
   position: relative;
@@ -65,18 +86,23 @@ canvas {
   width: 100%;
 }
 
-
 @media only screen and (max-width: 500px) {
   body {
     font-size: 24px;
-    line-height: 36px;
     margin: 6px;
   }
 
   button {
-    border: 1px solid #000;
     padding-left: 5px;
     padding-right: 5px;
+    border: 1px solid #000;
+  }
+
+  button#hello {
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #dfdfdf;
+    border-top: 2px solid #dfdfdf;
   }
 
   p {
@@ -84,7 +110,7 @@ canvas {
   }
 
   .marquee {
-    font-size: 30px;
+    font-size: 34px;
     margin-bottom: 12px;
     margin-top: 12px;
   }

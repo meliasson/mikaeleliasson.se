@@ -8,6 +8,8 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "~4.16.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "serve-favicon": "~2.5.0"
   },
   "devDependencies": {

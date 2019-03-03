@@ -8,4 +8,5 @@ Well, since I pay for the domain, I might as well put a web site there.
 ## TODO
 
 * Add some tests.
-* Bundle JS and CSS with Webpack.
+* Bundle JS and CSS with Webpack. (ES6, SCSS)
+* https
