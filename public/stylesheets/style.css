@@ -8,7 +8,7 @@ html {
 }
 
 html.active {
-  color: #00FF00;
+  color: #00ff00;
 }
 
 body {
@@ -30,9 +30,9 @@ button {
 
 button#hello {
   background: #bfbfbf;
-  border-right: 3px solid #000;
   border-bottom: 3px solid #000;
   border-left: 3px solid #dfdfdf;
+  border-right: 3px solid #000;
   border-top: 3px solid #dfdfdf;
 }
 
@@ -97,15 +97,15 @@ canvas {
   }
 
   button {
+    border: 1px solid #000;
     padding-left: 5px;
     padding-right: 5px;
-    border: 1px solid #000;
   }
 
   button#hello {
-    border-right: 2px solid #000;
     border-bottom: 2px solid #000;
     border-left: 2px solid #dfdfdf;
+    border-right: 2px solid #000;
     border-top: 2px solid #dfdfdf;
   }
 
