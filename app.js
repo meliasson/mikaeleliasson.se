@@ -1,7 +1,6 @@
 var express = require('express')
 var path = require('path')
 // var favicon = require('serve-favicon')
-
 var index = require('./routes/index')
 var gifs = require('./routes/gifs')
 

@@ -7,7 +7,20 @@ Well, since I pay for the domain, I might as well put a web site there.
 
 ## TODO
 
-* Add some tests.
+### Tests
+
+* Use fixtures.
+* Expect mocks to be requested in certain ways.
+* Create end-to-end tests.
+
+### Gifs
+
+* Make search queries configurable via ENV variables.
+* Prefetch and cache gifs.
+
+### Misc
+
 * Bundle JS and CSS with Webpack. (ES6, SCSS)
 * Serve over HTTPS.
 * Deploy continuously.
+* Serve a favicon.
