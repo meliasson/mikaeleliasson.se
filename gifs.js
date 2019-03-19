@@ -4,7 +4,7 @@ const settings = require('./settings')
 function optionsForTrending () {
   return {
     params: {
-      key: settings.tenorApiKey,
+      key: settings.tenor.apiKey,
       limit: 12,
       media_filter: 'minimal'
     }
@@ -17,7 +17,7 @@ function optionsForRelevant () {
       key: settings.tenorApiKey,
       limit: 12,
       media_filter: 'minimal',
-      q: 'space cat'
+      q: settings.tenor.searchQuery
     }
   }
 }
