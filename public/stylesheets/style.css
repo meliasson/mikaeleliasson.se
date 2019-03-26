@@ -106,7 +106,7 @@ canvas {
     padding-right: 5px;
   }
 
-  button#hello {
+  body.active button#hello {
     border-bottom: 2px solid #000;
     border-left: 2px solid #dfdfdf;
     border-right: 2px solid #000;
