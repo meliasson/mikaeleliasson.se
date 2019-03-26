@@ -18,7 +18,7 @@ body.active {
   background: url(/images/space-cat.gif) no-repeat center center scroll;
   background-size: cover;
   color: #00ff00;
-  font-family: Comic Sans MS, sans-serif;
+  font-family: Comic Sans MS, Marker Felt, sans-serif;
 }
 
 button {
