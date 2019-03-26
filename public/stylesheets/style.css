@@ -7,15 +7,18 @@ html {
   min-height: 100%;
 }
 
-html.active {
-  color: #00ff00;
-}
-
 body {
   font-family: Helvetica Neue, sans-serif;
   font-size: 36px;
   line-height: 1.4;
   margin: 10px;
+}
+
+body.active {
+  background: url(/images/space-cat.gif) no-repeat center center scroll;
+  background-size: cover;
+  color: #00ff00;
+  font-family: Comic Sans MS, sans-serif;
 }
 
 button {
@@ -28,15 +31,16 @@ button {
   text-transform: lowercase;
 }
 
-button#hello {
+body.active button#hello {
   background: #bfbfbf;
   border-bottom: 3px solid #000;
   border-left: 3px solid #dfdfdf;
   border-right: 3px solid #000;
   border-top: 3px solid #dfdfdf;
+  transform: rotate(180deg);
 }
 
-html.active button {
+body.active button {
   border-color: #00FF00;
   color: #00FF00;
 }
@@ -45,7 +49,7 @@ a {
   color: #000;
 }
 
-html.active a {
+body.active a {
   color: #00FF00;
 }
 

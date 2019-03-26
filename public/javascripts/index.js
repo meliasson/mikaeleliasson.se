@@ -4,18 +4,20 @@ import { start as startGameOfLife } from './gameoflife.js'
 function initHello () {
   var helloButton = document.getElementById('hello')
   helloButton.addEventListener('click', function (event) {
-    if (document.documentElement.classList.contains('active')) {
-      document.documentElement.classList.remove('active')
-      document.documentElement.style.background = 'none'
+    if (document.body.classList.contains('active')) {
+      document.body.classList.remove('active')
+      document.body.style.background = 'none'
+      document.getElementById('hello').innerHTML = 'Hello'
     } else {
       window.fetch('/gifs')
         .then(function (response) {
           return response.json()
         })
         .then(function (responseBody) {
-          document.documentElement.classList.add('active')
-          document.documentElement.style.background = `url(${responseBody.gifUrl}) no-repeat center center scroll`
-          document.documentElement.style.backgroundSize = 'cover'
+          document.body.classList.add('active')
+          document.body.style.background = `url(${responseBody.gifUrl}) no-repeat center center scroll`
+          document.body.style.backgroundSize = 'cover'
+          document.getElementById('hello').innerHTML = 'H3110'
         })
     }
   })
