@@ -1,7 +1,20 @@
 import { start as startMarquee, stop as stopMarquee } from './marquee.js'
 import { start as startGameOfLife } from './gameoflife.js'
 
+var gifUrl;
+
+function cacheGifUrl() {
+  window.fetch('/gifs')
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (responseBody) {
+      gifUrl = responseBody.gifUrl
+    })
+}
+
 function initHello () {
+  cacheGifUrl()
   var helloButton = document.getElementById('hello')
   helloButton.addEventListener('click', function (event) {
     if (document.body.classList.contains('active')) {
@@ -9,16 +22,11 @@ function initHello () {
       document.body.style.background = 'none'
       document.getElementById('hello').innerHTML = 'Hello'
     } else {
-      window.fetch('/gifs')
-        .then(function (response) {
-          return response.json()
-        })
-        .then(function (responseBody) {
-          document.body.classList.add('active')
-          document.body.style.background = `url(${responseBody.gifUrl}) no-repeat center center scroll`
-          document.body.style.backgroundSize = 'cover'
-          document.getElementById('hello').innerHTML = 'H3110'
-        })
+      document.body.classList.add('active')
+      document.body.style.background = `url(${gifUrl}) no-repeat center center scroll`
+      document.body.style.backgroundSize = 'cover'
+      document.getElementById('hello').innerHTML = 'H3110'
+      cacheGifUrl()
     }
   })
 }
