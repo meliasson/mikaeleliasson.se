@@ -1,6 +1,7 @@
 var express = require('express')
 var path = require('path')
 // var favicon = require('serve-favicon')
+var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 var index = require('./routes/index')
 var gifs = require('./routes/gifs')
 
@@ -11,6 +12,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(redirectToHTTPS([/localhost:(\d{4})/], []));
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', index)
