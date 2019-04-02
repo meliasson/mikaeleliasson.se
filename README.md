@@ -14,14 +14,8 @@ Well, since I pay for the domain, I might as well put a web site there.
 * Expect mocks to be requested in certain ways.
 * Create end-to-end tests.
 
-### Gifs
-
-* Make search queries configurable via ENV variables.
-* Prefetch and cache gifs.
-
 ### Misc
 
-* Bundle JS and CSS with Webpack. (ES6, SCSS)
+* Bundle JS and CSS with Webpack for ES6 and SCSS.
 * Serve over HTTPS.
-* Deploy continuously.
-* Serve a favicon.
+* Serve a favicon or reply with a 204?
