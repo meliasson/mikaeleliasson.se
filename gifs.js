@@ -12,12 +12,14 @@ function optionsForTrending () {
 }
 
 function optionsForRelevant () {
+  queries = settings.tenor.searchQueries.split(',')
+  index = Math.floor(Math.random() * queries.length)
   return {
     params: {
       key: settings.tenorApiKey,
       limit: 12,
       media_filter: 'minimal',
-      q: settings.tenor.searchQuery
+      q: queries[index]
     }
   }
 }
