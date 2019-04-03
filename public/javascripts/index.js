@@ -50,5 +50,5 @@ function initMarquees () {
 document.addEventListener('DOMContentLoaded', function () {
   initHello()
   initMarquees()
-  startGameOfLife()
+  // startGameOfLife()
 })
