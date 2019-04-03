@@ -20,12 +20,12 @@ function initHello () {
     if (document.body.classList.contains('active')) {
       document.body.classList.remove('active')
       document.body.style.background = 'none'
-      document.getElementById('hello').innerHTML = 'Hello'
+      document.getElementById('hello').innerHTML = 'hello'
     } else {
       document.body.classList.add('active')
       document.body.style.background = `url(${gifUrl}) no-repeat center center scroll`
       document.body.style.backgroundSize = 'cover'
-      document.getElementById('hello').innerHTML = 'H3110'
+      document.getElementById('hello').innerHTML = 'uryyb'
       cacheGifUrl()
     }
   })
