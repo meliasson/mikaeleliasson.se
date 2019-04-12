@@ -21,12 +21,12 @@ function initHello () {
       document.body.classList.remove('active')
       document.body.style.background = 'none'
       document.getElementById('hello').innerHTML = 'hello'
+      cacheGifUrl()
     } else {
       document.body.classList.add('active')
       document.body.style.background = `url(${gifUrl}) no-repeat center center scroll`
       document.body.style.backgroundSize = 'cover'
       document.getElementById('hello').innerHTML = 'uryyb'
-      cacheGifUrl()
     }
   })
 }
