@@ -17,5 +17,4 @@ Well, since I pay for the domain, I might as well put a web site there.
 ### Misc
 
 * Bundle JS and CSS with Webpack for ES6 and SCSS.
-* Serve over HTTPS.
 * Serve a favicon or reply with a 204?
